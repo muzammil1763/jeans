@@ -30,14 +30,13 @@ export async function GET(request: Request) {
 
 export async function POST(request: Request) {
 
-    const uri =
-      "mongodb+srv://muzammilk1763:hsZWo6W5BrHCsGND@product1.wk37e.mongodb.net/";
+    
     const client = new MongoClient(uri);
 const body= await request.json();
 console.log(body);
     try {
-      const database = client.db("jeans");
-      const jeans = database.collection("products");
+      const database = client.db(dbName);
+      const jeans = database.collection(collectionName);
       // Query for a movie that has the title 'Back to the Future'
       const query = {};
       const jean = await jeans.insertOne(body);
