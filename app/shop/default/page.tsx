@@ -6,7 +6,7 @@ import ProductList from "@/components/Other/ProductList";
 // Function to fetch data on the server
 async function fetchProducts() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/products/`,
+    `${process.env.API_BASE_URL}/api/products/`,
     {
       cache: "no-store", // Disable caching
     }
